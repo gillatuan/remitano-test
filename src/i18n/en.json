@@ -1,0 +1,6 @@
+{
+  "ERROR_REQUIRED": "Not Empty",
+  "ERROR_MATCH_ITEM": "Not same format",
+  "ERROR_MINLENGTH": "Not same min length",
+  "ERROR_MAXLENGTH": "Not same max length"
+}

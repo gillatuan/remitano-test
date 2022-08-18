@@ -1,0 +1,7 @@
+{
+  "ERROR_REQUIRED": "Ko để trống",
+  "ERROR_MATCH_ITEM": "Ko giống định dạng",
+  "ERROR_MINLENGTH": "Ko giống chiều dài tối thiếu",
+  "ERROR_MAXLENGTH": "Ko giống chiều dài tối đa",
+  "FILE_TYPE_ERROR": "Only *.jpeg and *.png images will be accepted"
+}
