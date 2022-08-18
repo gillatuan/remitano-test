@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { RequireAuth } from 'HOC/RequireAuth';
+import { RequireAuth } from 'utils/RequireAuth';
 import { Layout } from 'themes/Layouts';
 
 import { AuthProvider } from 'context/AuthContext'
