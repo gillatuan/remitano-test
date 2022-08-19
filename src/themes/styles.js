@@ -17,4 +17,8 @@ export const Wrapper = styled.div`
       margin-left: 10px;
     }
   }
+
+  .content {
+    margin-top: 70px;
+  }
 `
