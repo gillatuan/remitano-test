@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap"
 import { Wrapper } from "./styles"
 
 export const MyModal = (props) => {
-  const { children, dialogClassName = "my-modal", name = "my-modal", show = false, title = "My Modal", setShow } = props
+  const { children, dialogClassName = "my-modal", name = "my-modal", show = false, size = 'lg', title = "My Modal", setShow } = props
 
   const handleShowConfirm = (status) => {
     setShow(status)
@@ -15,7 +15,7 @@ export const MyModal = (props) => {
         aria-labelledby={name}
         dialogClassName={dialogClassName}
         show={show}
-        size="lg"
+        size={size}
         onHide={() => handleShowConfirm(false)}
       >
         <Modal.Header closeButton>

@@ -5,6 +5,7 @@ import { Wrapper } from "./styles"
 export const FormInput = (props) => {
   const {
     ariaLabel = "",
+    className = "",
     disabled,
     error,
     id = "",
@@ -21,9 +22,9 @@ export const FormInput = (props) => {
     onChange,
   } = props
 
-  let styleError = ""
+  let styleError = className
   if (error) {
-    styleError = "style-error"
+    styleError += " style-error"
   }
 
   return (

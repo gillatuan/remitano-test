@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom"
 
 import { FormInput } from "components/FormInput"
-import { Login_Fields } from "constants/auth"
+import { LoginFields } from "constants/auth"
 import { VALIDATION_LOGIN } from "constants/validation"
 import { useAuth } from "context/AuthContext"
 import { useFormControls } from "hooks/useFormControls"
@@ -15,7 +15,7 @@ export const LoginPage = () => {
   const location = useLocation()
   const auth = useAuth()
 
-  const { errors, formIsValid, values, handleInputValue } = useFormControls(Login_Fields, VALIDATION_LOGIN)
+  const { errors, formIsValid, values, handleInputValue } = useFormControls(LoginFields, VALIDATION_LOGIN)
 
   const [show, setShow] = useState(false)
   const [titleModal, setTitleModal] = useState(false)

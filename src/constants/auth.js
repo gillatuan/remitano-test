@@ -1,4 +1,4 @@
-export const Login_Fields = {
+export const LoginFields = {
   username: "",
   password: "",
 }
@@ -15,8 +15,8 @@ export const fakeAuthProvider = {
     if (users.length > 0) {
       message = 'User is existed'
       // not allow existed user
-      const checkExistUser = users.find((item) => item.username === user.username)
-      if (!checkExistUser) {
+      const checkExistedItem = users.find((item) => item.username === user.username)
+      if (!checkExistedItem) {
         message = 'Register user successfully'
         fakeAuthProvider.isAuthenticated = true
         users.push(user)
@@ -36,11 +36,11 @@ export const fakeAuthProvider = {
     let message = ''
     if (users.length > 0) {
       message = 'User not found'
-      const checkExistUser = users.find((item) => item.username === user.username && item.password === user.password)
-      if (checkExistUser) {
+      const checkExistedItem = users.find((item) => item.username === user.username && item.password === user.password)
+      if (checkExistedItem) {
         message = 'Login Successfully'
         fakeAuthProvider.isAuthenticated = true
-        localStorage.setItem("user", JSON.stringify(checkExistUser))
+        localStorage.setItem("user", JSON.stringify(checkExistedItem))
       }
     }
 
