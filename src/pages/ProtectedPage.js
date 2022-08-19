@@ -1,14 +1,22 @@
-import { ShareVideo } from "components/ShareVideo"
-import { useAuth } from "context/AuthContext"
+import { ShareVideo } from 'components/ShareVideo';
+import { useAuth } from 'context/AuthContext';
+import { useMovies } from 'context/MoviesContext';
+import { useEffect, useState } from 'react';
 
 export const ProtectedPage = () => {
-  const auth = useAuth()
+  const auth = useAuth();
+  const movies = useMovies();
+  const [items, setItems] = useState([]);
 
-  let items = []
-  if (localStorage.getItem("sharedMovies")) {
-    const sharedMovies = JSON.parse(localStorage.getItem("sharedMovies"))
-    items = sharedMovies.filter((item) => item.username === auth.user.username)
-  }
+  useEffect(() => {
+    if (movies.sharedMovies.length > 0) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      const filterItems = movies.sharedMovies.filter(
+        (item) => item.username === auth.user.username
+      );
+      setItems(filterItems);
+    }
+  }, [auth.user.username, movies.sharedMovies]);
 
   return (
     <>
@@ -16,5 +24,5 @@ export const ProtectedPage = () => {
         <ShareVideo key={`ProtectedPage-${item.author_url}`} item={item} />
       ))}
     </>
-  )
-}
+  );
+};

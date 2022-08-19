@@ -33,9 +33,8 @@ export const fakeAuthProvider = {
   signin(user, callback) {
     // eslint-disable-next-line no-mixed-operators
     const users = (localStorage.getItem("users") && JSON.parse(localStorage.getItem("users"))) || []
-    let message = ''
+    let message = 'User not found'
     if (users.length > 0) {
-      message = 'User not found'
       const checkExistedItem = users.find((item) => item.username === user.username && item.password === user.password)
       if (checkExistedItem) {
         message = 'Login Successfully'

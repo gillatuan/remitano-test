@@ -31,9 +31,9 @@ export const ProfilePage = () => {
   return (
     <Wrapper>
       <Form.Group className="d-flex align-items-center user-profile">
-        <span>
+        <p>
           Welcome {user.username}, Go to <Link to="/protected">Profile</Link>
-        </span>
+        </p>
         <Button type="button" variant="outline-primary" onClick={() => shareItem()}>
           Share Movie
         </Button>

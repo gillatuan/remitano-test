@@ -11,10 +11,12 @@ import { VALIDATION_SHARE_MOVIE } from "constants/validation"
 import { ShareMovieDef } from "constants/common"
 
 import { Wrapper } from "./styles"
+import { useMovies } from 'context/MoviesContext'
 
 export const ShareMovie = (props) => {
   const { setShow } = props
   const auth = useAuth()
+  const movies = useMovies()
 
   const { errors, formIsValid, values, handleInputValue } = useFormControls(ShareMovieDef, VALIDATION_SHARE_MOVIE)
 
@@ -35,6 +37,7 @@ export const ShareMovie = (props) => {
           ...result.data
         })
 
+        movies.setSharedMovies(listMovie)
         localStorage.setItem("sharedMovies", JSON.stringify(listMovie))
       }
     } else {
@@ -43,6 +46,7 @@ export const ShareMovie = (props) => {
         ...result.data
       })
 
+      movies.setSharedMovies(listMovie)
       localStorage.setItem("sharedMovies", JSON.stringify(listMovie))
     }
 
