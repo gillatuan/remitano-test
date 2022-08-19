@@ -1,3 +1,8 @@
+export const Login_Fields = {
+  username: '',
+  password: ''
+}
+
 /**
  * This represents some generic auth provider API, like Firebase.
  */

@@ -14,7 +14,7 @@ import { LoginPage } from 'modules/Login';
 import { ProtectedPage } from 'pages/ProtectedPage';
 
 function App() {
-  const { i18n } = useTranslation();
+  /* const { i18n } = useTranslation();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -24,8 +24,8 @@ function App() {
       }
     }
   }, [i18n]);
-
-  /* const onChangeLng = useCallback(
+  
+  const onChangeLng = useCallback(
     (lng) => {
       i18n.changeLanguage(lng);
       localStorage.setItem('translateLng', lng);
@@ -39,7 +39,6 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<PublicPage />} />
-            <Route path="/login" element={<LoginPage />} />
             <Route
               path="/protected"
               element={

@@ -1,5 +1,5 @@
 import { fakeAuthProvider } from 'constants/auth';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext();
 export const AuthProvider = (props) => {
@@ -7,8 +7,17 @@ export const AuthProvider = (props) => {
 
   const [user, setUser] = useState();
 
+  useEffect(() => {
+    if (localStorage.user) {
+      // get user from localStorage
+      setUser(localStorage.user)
+    }
+  }, [])
+
   const signin = (newUser, callback) => {
     return fakeAuthProvider.signin(() => {
+      localStorage.setItem('user', newUser)
+
       setUser(newUser);
       callback();
     });
@@ -16,6 +25,8 @@ export const AuthProvider = (props) => {
 
   const signout = (callback) => {
     return fakeAuthProvider.signout(() => {
+      localStorage.removeItem("user")
+
       setUser(null);
       callback();
     });
