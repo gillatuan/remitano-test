@@ -7,6 +7,8 @@ import { useAuth } from "context/AuthContext"
 import { useFormControls } from "hooks/useFormControls"
 import { Button, Form } from "react-bootstrap"
 import { Wrapper } from "./styles"
+import { useState } from "react"
+import { MyModal } from "components/MyModal"
 
 export const LoginPage = () => {
   const navigate = useNavigate()
@@ -14,6 +16,10 @@ export const LoginPage = () => {
   const auth = useAuth()
 
   const { errors, formIsValid, values, handleInputValue } = useFormControls(Login_Fields, VALIDATION_LOGIN)
+
+  const [show, setShow] = useState(false)
+  const [titleModal, setTitleModal] = useState(false)
+  const [message, setMessage] = useState("")
 
   const from = location.state?.from?.pathname || "/"
 
@@ -24,14 +30,14 @@ export const LoginPage = () => {
       return
     }
 
-    auth.signin({ username: values.username, password: values.password }, () => {
-      // Send them back to the page they tried to visit when they were
-      // redirected to the login page. Use { replace: true } so we don't create
-      // another entry in the history stack for the login page.  This means that
-      // when they get to the protected page and click the back button, they
-      // won't end up back on the login page, which is also really nice for the
-      // user experience.
-      navigate(from, { replace: true })
+    auth.signin({ username: values.username, password: values.password }, (isAuthenticated, message) => {
+      setMessage(message)
+      setTitleModal("Login")
+      setShow(true)
+      
+      if (isAuthenticated) {
+        navigate('/protected', { replace: true })
+      }
     })
   }
 
@@ -42,14 +48,14 @@ export const LoginPage = () => {
       return
     }
 
-    auth.register({ username: values.username, password: values.password }, () => {
-      // Send them back to the page they tried to visit when they were
-      // redirected to the login page. Use { replace: true } so we don't create
-      // another entry in the history stack for the login page.  This means that
-      // when they get to the protected page and click the back button, they
-      // won't end up back on the login page, which is also really nice for the
-      // user experience.
-      navigate(from, { replace: true })
+    auth.register({ username: values.username, password: values.password }, (isAuthenticated, message) => {
+      setMessage(message)
+      setTitleModal("Register")
+      setShow(true)
+
+      if (isAuthenticated) {
+        navigate(from, { replace: true })
+      }
     })
   }
 
@@ -80,6 +86,9 @@ export const LoginPage = () => {
           </Button>
         </Form.Group>
       </Form>
+      <MyModal show={show} title={titleModal} setShow={setShow}>
+        {message}
+      </MyModal>
     </Wrapper>
   )
 }
