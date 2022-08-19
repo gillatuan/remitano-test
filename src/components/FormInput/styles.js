@@ -17,11 +17,14 @@ export const Wrapper = styled.div`
   label.sub-label {
     font-weight: normal;
     font-size: 0.65rem;
+    position: absolute;
+    bottom: -60px;
   }
 
   .form-input {
     display: flex;
     flex-direction: column;
     max-width: 200px;
+    position: relative;
   }
 `

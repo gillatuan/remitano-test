@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
 import { useAuth } from "context/AuthContext"
@@ -10,7 +9,7 @@ export const ProfilePage = () => {
   const location = useLocation()
 
   const auth = useAuth()
-  const user = JSON.parse(auth.user)
+  const user = auth.user
 
   const from = location.state?.from?.pathname || "/"
 

@@ -1,21 +1,38 @@
 import { fakeAuthProvider } from 'constants/auth';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 export const AuthProvider = (props) => {
   const { children } = props;
 
-  const [user, setUser] = useState();
+  let userInfo = null
+  if (localStorage.user) {
+    // get user from localStorage
+    userInfo = JSON.parse(localStorage.user)
+  }
+  const [user, setUser] = useState(userInfo);
 
-  useEffect(() => {
-    if (localStorage.user) {
-      // get user from localStorage
-      setUser(localStorage.user)
-    }
-  }, [])
+  const register = (newUser, callback) => {
+    return fakeAuthProvider.register(newUser, (isRegisterred) => {
+      if (!isRegisterred) {
+        alert('There is existed user')
+
+        return
+      }
+      
+      alert('Register successfully')
+      callback();
+    });
+  };
 
   const signin = (newUser, callback) => {
-    return fakeAuthProvider.signin(() => {
+    return fakeAuthProvider.signin(newUser, (isAuthenticated) => {
+      if (!isAuthenticated) {
+        alert('User not found')
+
+        return
+      }
+
       localStorage.setItem('user', JSON.stringify(newUser))
 
       setUser(newUser);
@@ -32,7 +49,7 @@ export const AuthProvider = (props) => {
     });
   };
 
-  let value = { user, signin, signout };
+  const value = { user, register, signin, signout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
 import { FormInput } from "components/FormInput"
@@ -25,11 +24,7 @@ export const LoginPage = () => {
       return
     }
 
-    const formData = new FormData(e.currentTarget)
-    const username = formData.get("username")
-    const password = formData.get("password")
-
-    auth.signin({ username, password }, () => {
+    auth.signin({ username: values.username, password: values.password }, () => {
       // Send them back to the page they tried to visit when they were
       // redirected to the login page. Use { replace: true } so we don't create
       // another entry in the history stack for the login page.  This means that
@@ -40,11 +35,27 @@ export const LoginPage = () => {
     })
   }
 
-  const handleRegister = () => {}
+  const handleRegister = (e) => {
+    e.preventDefault()
+
+    if (!formIsValid()) {
+      return
+    }
+
+    auth.register({ username: values.username, password: values.password }, () => {
+      // Send them back to the page they tried to visit when they were
+      // redirected to the login page. Use { replace: true } so we don't create
+      // another entry in the history stack for the login page.  This means that
+      // when they get to the protected page and click the back button, they
+      // won't end up back on the login page, which is also really nice for the
+      // user experience.
+      navigate(from, { replace: true })
+    })
+  }
 
   return (
     <Wrapper>
-      <Form className="d-flex form-login" onSubmit={handleSubmit}>
+      <Form className="d-flex form-login">
         <FormInput
           error={errors.username}
           name="username"
@@ -61,10 +72,10 @@ export const LoginPage = () => {
           onChange={handleInputValue}
         />
         <Form.Group className="d-flex form-login-buttons">
-          <Button type="submit" variant="outline-primary">
+          <Button type="submit" variant="outline-primary" onClick={(e) => handleSubmit(e)}>
             Login
           </Button>
-          <Button type="button" variant="outline-primary" onClick={() => handleRegister()}>
+          <Button type="button" variant="outline-primary" onClick={(e) => handleRegister(e)}>
             Register
           </Button>
         </Form.Group>
