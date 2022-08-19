@@ -1,9 +1,20 @@
-import { useAuth } from 'context/AuthContext'
+import { ShareVideo } from "components/ShareVideo"
+import { useAuth } from "context/AuthContext"
 
 export const ProtectedPage = () => {
   const auth = useAuth()
 
-  console.log('auth.user', auth.user);
+  let items = []
+  if (localStorage.getItem("sharedMovies")) {
+    const sharedMovies = JSON.parse(localStorage.getItem("sharedMovies"))
+    items = sharedMovies.filter((item) => item.username === auth.user.username)
+  }
 
-  return <h3>ProtectedPage</h3>;
-};
+  return (
+    <>
+      {items.map((item) => (
+        <ShareVideo key={`ProtectedPage-${item.author_url}`} item={item} />
+      ))}
+    </>
+  )
+}
