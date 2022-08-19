@@ -12,6 +12,7 @@ export const VALIDATION_LOGIN = {
     label: "LABEL_PASSWORD",
     rule: {
       required: true,
+      pattern: new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)
     },
     value: "",
   },

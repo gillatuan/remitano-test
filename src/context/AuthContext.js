@@ -16,7 +16,7 @@ export const AuthProvider = (props) => {
 
   const signin = (newUser, callback) => {
     return fakeAuthProvider.signin(() => {
-      localStorage.setItem('user', newUser)
+      localStorage.setItem('user', JSON.stringify(newUser))
 
       setUser(newUser);
       callback();

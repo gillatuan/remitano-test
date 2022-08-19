@@ -14,6 +14,7 @@ export const FormInput = (props) => {
     name,
     placeholder,
     required,
+    style = null,
     subLabel,
     value,
     type = "text",
@@ -26,20 +27,19 @@ export const FormInput = (props) => {
   }
 
   return (
-    <Wrapper className={styleError} key={name}>
+    <Wrapper className={styleError} key={name} style={style}>
       <div className="label-container">
         {label && (
           <Form.Label>
             {label}: {required && <span className="required">*</span>}
           </Form.Label>
         )}
-        {subLabel && <Form.Label className="sub-label">{subLabel}</Form.Label>}
       </div>
 
       {isView && <p>{value}</p>}
 
       {!isView && (
-        <>
+        <div className="form-input">
           <Form.Control
             aria-label={ariaLabel}
             data-testid={id}
@@ -50,13 +50,14 @@ export const FormInput = (props) => {
             value={value}
             onChange={(e) => onChange(name, e.currentTarget.value)}
           />
+          {subLabel && <Form.Label className="sub-label">{subLabel}</Form.Label>}
 
           {isDisplayErrorMessage && error && (
             <Form.Label className="required" key={`danger-${name}`}>
               {error}
             </Form.Label>
           )}
-        </>
+        </div>
       )}
     </Wrapper>
   )

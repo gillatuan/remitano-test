@@ -128,6 +128,16 @@ export const useFormControls = (initialFormValues, validateFields) => {
         return errors
       }
     }
+    if (fields[getKey].rule.pattern) {
+      if (getValue) {
+        const isMatchedPattern = fields[getKey].rule.pattern.test(getValue)
+        if (!isMatchedPattern) {
+          errors[getKey] = `${t('ERROR_MATCH_ITEM', { fieldLabel: t(fields[getKey].label) })}`
+        }
+
+        return errors
+      }
+    }
     /* if (fields[getKey].name === 'phone_number') {
         if (getValue) {
           const pattern = new RegExp(/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4,5}$/)
