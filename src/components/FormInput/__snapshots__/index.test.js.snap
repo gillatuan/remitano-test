@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputField /> snapshots renders disable input correctly 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  disabled={true}
+  id="input-title"
+  label="Form Title"
+  name="title"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input correctly 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is checkbox 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="checkbox"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is date 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="date"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is disabled checkbox 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  disabled={true}
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="checkbox"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is disabled radio 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  disabled={true}
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="radio"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is email 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="email"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is file 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="file"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is image 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="image"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is number 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="number"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is radio 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="radio"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is search 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="search"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is select 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="select"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is select multi 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  multiple={true}
+  name="title"
+  type="select"
+/>
+`;
+
+exports[`<InputField /> snapshots renders input is textarea 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  type="textarea"
+/>
+`;
+
+exports[`<InputField /> snapshots renders readonly input 1`] = `
+<input
+  ariaLabel="aria-input-title"
+  className="form-control"
+  id="input-title"
+  label="Form Title"
+  name="title"
+  readOnly={true}
+/>
+`;

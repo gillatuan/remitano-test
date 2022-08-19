@@ -20,7 +20,6 @@ export const ShareVideo = (props) => {
       <Col md={6}>
         <p>{item.title}</p>
         <p>Share by: {item.username}</p>
-        <p></p>
       </Col>
     </Row>
   )

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputField /> snapshots renders disable input correctly 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input correctly 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is checkbox 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is date 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is disabled checkbox 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is disabled radio 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is email 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is file 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is image 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is number 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is radio 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is search 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is select 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is select multi 1`] = `null`;
+
+exports[`<InputField /> snapshots renders input is textarea 1`] = `null`;
+
+exports[`<InputField /> snapshots renders readonly input 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders Modal correctly 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders Modal with My Modal in title 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders disable input correctly 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input correctly 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is checkbox 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is date 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is disabled checkbox 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is disabled radio 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is email 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is file 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is image 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is number 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is radio 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is search 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is select 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is select multi 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders input is textarea 1`] = `null`;
+
+exports[`<MyModal /> props snapshots renders readonly input 1`] = `null`;
